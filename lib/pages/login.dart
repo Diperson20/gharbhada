@@ -12,6 +12,7 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -19,9 +20,9 @@ class _LoginState extends State<Login> {
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             colors: [
-              Colors.orange[900]!,
-              Colors.orange[800]!,
-              Colors.orange[400]!,
+              Colors.blue[900]!,
+              Colors.blue[800]!,
+              Colors.blue[400]!,
             ],
           ),
         ),
@@ -68,6 +69,7 @@ class _LoginState extends State<Login> {
                         height: 60,
                       ),
                       Container(
+                        //container login and password info
                         padding: EdgeInsets.all(30),
                         decoration: BoxDecoration(
                             color: Colors.white,
@@ -86,7 +88,9 @@ class _LoginState extends State<Login> {
                               // Input for email
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom: BorderSide(color: Colors.grey[200]!),
+                                  bottom: BorderSide(
+                                      color: const Color.fromARGB(
+                                          255, 11, 10, 10)!),
                                 ),
                               ),
                               child: TextField(
@@ -101,7 +105,9 @@ class _LoginState extends State<Login> {
                               // input for password
                               decoration: BoxDecoration(
                                 border: Border(
-                                  bottom: BorderSide(color: Colors.grey[200]!),
+                                  bottom: BorderSide(
+                                      color: const Color.fromARGB(
+                                          255, 17, 14, 14)!),
                                 ),
                               ),
                               child: TextField(
@@ -112,23 +118,93 @@ class _LoginState extends State<Login> {
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: 40,
-                            ),
-                            Text(
-                              "Forgot Password?",
-                              style: TextStyle(color: Colors.grey),
-                            ),
-                            SizedBox(
-                              height: 40,
-                            ),
+                          ],
+                        ),
+                      ), //this is a pass login container
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
                             Container(
-                              height: 50,
-                              margin: EdgeInsets.symmetric(horizontal: 50),
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 20),
+                                child: Text(
+                                  "Forget Password?",
+                                  style: TextStyle(
+                                      color: Colors.grey,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
                             ),
                           ],
                         ),
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(right: 20, left: 20),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              //login container
+                              height: 50,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.orange,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Log In",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                            Container(
+                              //Sign Up container
+                              height: 50,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                color: Colors.orange,
+                              ),
+                              child: Center(
+                                child: Text(
+                                  "Sign Up",
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Text("Sign in with"),
+                      ),
+                      Container(
+                        child: Row(
+                          children: [
+                            Container(
+                              height: 50,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                  color: Colors.blue,
+                                  borderRadius: BorderRadius.circular(100)),
+                            ), //google
+                          ],
+                        ),
+                      )
                     ],
                   ),
                 ),

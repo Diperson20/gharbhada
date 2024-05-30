@@ -18,6 +18,14 @@ class HomePage extends StatelessWidget {
           ),
           backgroundColor: Colors.blue,
         ),
+        drawer: Drawer(
+          backgroundColor: Colors.lightBlue,
+          child: Column(
+            children: [
+              DrawerHeader(child: Icon(Icons.local_convenience_store))
+            ],
+          ),
+        ),
         body: Column(
           children: [
             Card(
