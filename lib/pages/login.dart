@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:gharbhada/pages/button_login.dart';
+import 'package:gharbhada/pages/home_page.dart';
+import 'package:gharbhada/pages/imagetile.dart';
+import 'package:gharbhada/pages/register.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -13,10 +17,10 @@ class Login extends StatefulWidget {
 class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    //final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
-        width: double.infinity,
+        //width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
@@ -31,7 +35,7 @@ class _LoginState extends State<Login> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
-              height: 80,
+              height: 50,
             ),
             const Padding(
               padding: EdgeInsets.all(20),
@@ -57,7 +61,7 @@ class _LoginState extends State<Login> {
               // Login below code
               child: Container(
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 254, 254, 254),
+                  color: Colors.grey[300],
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(60),
                       topRight: Radius.circular(60)),
@@ -125,7 +129,7 @@ class _LoginState extends State<Login> {
                           ),
                         ), //this is a pass login container
                         SizedBox(
-                            height: MediaQuery.of(context).size.width * 0.07),
+                            height: MediaQuery.of(context).size.height * 0.04),
 
                         Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -142,120 +146,82 @@ class _LoginState extends State<Login> {
                         ),
 
                         SizedBox(
-                            height: MediaQuery.of(context).size.width * 0.07),
+                            height: MediaQuery.of(context).size.height * 0.04),
+
+                        ButtonLogin(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()),
+                            );
+                          },
+                        ),
+
+                        SizedBox(
+                            height: MediaQuery.of(context).size.height * 0.04),
 
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Container(
-                              //login container
-                              height: 50,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Color.fromARGB(255, 62, 60, 185),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "Log In",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
+                            Expanded(
+                                child: Divider(
+                              thickness: 0.5,
+                              color: Colors.grey[400],
+                            )),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 10.0),
+                              child: Text("Sign in with"),
                             ),
-                            Container(
-                              //Sign Up container
-                              height: 50,
-                              width: 150,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(50),
-                                color: Color.fromARGB(255, 62, 60, 185),
-                              ),
-                              child: Center(
-                                child: Text(
-                                  "Sign Up",
-                                  style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold),
-                                ),
-                              ),
-                            ),
+                            Expanded(
+                                child: Divider(
+                              thickness: 0.5,
+                              color: Colors.grey[400],
+                            )),
                           ],
                         ),
                         SizedBox(
-                            height: MediaQuery.of(context).size.width * 0.05),
-
-                        Container(
-                          child: Text("Sign in with"),
-                        ),
-                        SizedBox(
-                            height: MediaQuery.of(context).size.width * 0.05),
+                            height: MediaQuery.of(context).size.width * 0.04),
                         Container(
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Container(
-                                height: MediaQuery.of(context).size.width *
-                                    0.1, // Responsive height (10% of screen width)
-                                width: MediaQuery.of(context).size.width *
-                                    0.1, // Responsive width (10% of screen width)
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(100),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black
-                                          .withOpacity(0.3), // Shadow color
-                                      spreadRadius: 1,
-                                      blurRadius: 5,
-                                      offset: Offset(
-                                          0, 3), // Shadow position (top-left)
-                                    ),
-                                  ],
-                                ),
-                                child: FaIcon(
-                                  FontAwesomeIcons.google,
-                                  size: MediaQuery.of(context).size.width *
-                                      0.04, // Responsive icon size (4% of screen width)
-                                  color: Colors.white, // Icon color
-                                ),
+                              SquareTile(
+                                imagePath: 'assets/images/google.png',
                               ),
                               SizedBox(
-                                  width: MediaQuery.of(context).size.width *
-                                      0.05), // Responsive space between containers (5% of screen width)
-                              Container(
-                                height: MediaQuery.of(context).size.width *
-                                    0.1, // Responsive height (10% of screen width)
-                                width: MediaQuery.of(context).size.width *
-                                    0.1, // Responsive width (10% of screen width)
-                                alignment: Alignment.center,
-                                decoration: BoxDecoration(
-                                  color: Colors.blue,
-                                  borderRadius: BorderRadius.circular(100),
-                                  boxShadow: [
-                                    BoxShadow(
-                                      color: Colors.black
-                                          .withOpacity(0.3), // Shadow color
-                                      spreadRadius: 1,
-                                      blurRadius: 5,
-                                      offset: Offset(
-                                          0, 3), // Shadow position (top-left)
-                                    ),
-                                  ],
-                                ),
-                                child: FaIcon(
-                                  FontAwesomeIcons.facebook,
-                                  size: MediaQuery.of(context).size.width *
-                                      0.04, // Responsive icon size (4% of screen width)
-                                  color: Colors.white, // Icon color
-                                ),
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.05),
+                              SquareTile(
+                                imagePath: 'assets/images/facebook.png',
                               ),
                             ],
                           ),
+                        ),
+                        SizedBox(
+                            height: MediaQuery.of(context).size.width * 0.04),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text("Don't have an account?"),
+                            SizedBox(width: 5),
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Register()),
+                                );
+                              },
+                              child: Text(
+                                "Register Now",
+                                style: TextStyle(
+                                  color: Colors.blue[400],
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
                         )
                       ],
                     ),

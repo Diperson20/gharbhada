@@ -11,30 +11,19 @@ class HomePage extends StatelessWidget {
         .size
         .width; //Should be in Widget or material app.
     return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Flutter Map',
-            style: TextStyle(color: Colors.white),
-          ),
-          backgroundColor: Colors.blue,
+      appBar: AppBar(
+        title: const Text(
+          'Flutter Map',
+          style: TextStyle(color: Colors.white),
         ),
-        drawer: Drawer(
-          backgroundColor: Colors.lightBlue,
-          child: Column(
-            children: [
-              DrawerHeader(child: Icon(Icons.local_convenience_store))
-            ],
-          ),
+        backgroundColor: Colors.blue,
+      ),
+      drawer: Drawer(
+        backgroundColor: Colors.lightBlue,
+        child: Column(
+          children: [DrawerHeader(child: Icon(Icons.local_convenience_store))],
         ),
-        body: Column(
-          children: [
-            Card(
-              child: Padding(
-                padding: EdgeInsets.all(8),
-                child: Text(currentWidth.toString()),
-              ),
-            )
-          ],
-        ));
+      ),
+    );
   }
 }

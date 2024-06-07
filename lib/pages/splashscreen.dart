@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gharbhada/pages/home_page.dart';
+
 import 'package:gharbhada/pages/login.dart';
 
 class Splashscreen extends StatefulWidget {
@@ -17,7 +17,7 @@ class _SplashscreenState extends State<Splashscreen> {
   }
 
   _navigatetohome() async {
-    await Future.delayed(Duration(milliseconds: 1500), () {});
+    await Future.delayed(Duration(milliseconds: 100), () {});
     Navigator.pushReplacement(
         context, MaterialPageRoute(builder: (context) => Login()));
   }
