@@ -7,9 +7,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentWidth = MediaQuery.of(context)
-        .size
-        .width; //Should be in Widget or material app.
+    //Should be in Widget or material app.
     return Scaffold(
       appBar: AppBar(
         title: const Text(

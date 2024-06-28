@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+//import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gharbhada/pages/button_login.dart';
 import 'package:gharbhada/pages/home_page.dart';
 import 'package:gharbhada/pages/imagetile.dart';
@@ -97,7 +97,7 @@ class _LoginState extends State<Login> {
                                   border: Border(
                                     bottom: BorderSide(
                                         color: const Color.fromARGB(
-                                            255, 11, 10, 10)!),
+                                            255, 11, 10, 10)),
                                   ),
                                 ),
                                 child: TextField(
@@ -114,7 +114,7 @@ class _LoginState extends State<Login> {
                                   border: Border(
                                     bottom: BorderSide(
                                         color:
-                                            Color.fromARGB(255, 100, 89, 89)!),
+                                            Color.fromARGB(255, 100, 89, 89)),
                                   ),
                                 ),
                                 child: TextField(
